@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { UserServiceService } from 'src/app/services/user-service.service';
 import { User } from '../../models/user';
@@ -18,6 +19,8 @@ export class UserListPage implements OnInit {
   ngOnInit() {
     this.userService.getAll().subscribe(
       res=>{
+        this.users = res;
+        console.log(this.users);
 
       },
       erro =>{
